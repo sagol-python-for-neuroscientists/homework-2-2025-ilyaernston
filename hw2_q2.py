@@ -4,7 +4,7 @@ from collections import namedtuple
 Condition = Enum("Condition", ("CURE", "HEALTHY", "SICK", "DYING", "DEAD"))
 Agent = namedtuple("Agent", ("name", "category"))
 
-def meetup(agent_listing: Tuple[Agent, ...]) -> List[Agent]:
+def meetup(agent_listing: tuple[Agent, ...]) -> list[Agent]:
     """Model the outcome of the meetings of pairs of agents."""
 
     from enum import Enum
@@ -28,7 +28,7 @@ def meetup(agent_listing: Tuple[Agent, ...]) -> List[Agent]:
     
     return updated_active + untouched
 
-def resolve_pair(a: Agent, b: Agent) -> List[Agent]:
+def resolve_pair(a: Agent, b: Agent) -> list[Agent]:
     # Helper functions for category transitions
     upgrade = {Condition.SICK: Condition.HEALTHY, Condition.DYING: Condition.SICK}
     degrade = {Condition.SICK: Condition.DYING, Condition.DYING: Condition.DEAD}
