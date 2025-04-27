@@ -1,3 +1,5 @@
+from enum import Enum
+from collections import namedtuple
 
 Condition = Enum("Condition", ("CURE", "HEALTHY", "SICK", "DYING", "DEAD"))
 Agent = namedtuple("Agent", ("name", "category"))

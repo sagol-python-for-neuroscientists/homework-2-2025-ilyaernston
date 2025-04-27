@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     for method in methods:
         try:
-            eval(method)()
+            eval(method)
         except AssertionError as e:
             errors.append(f"Failed when testing method 'test_{method}': {e}")
             break
